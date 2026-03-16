@@ -1,0 +1,4 @@
+backend/.env
+backend/portfolio_project/
+__pycache__/
+*.pyc

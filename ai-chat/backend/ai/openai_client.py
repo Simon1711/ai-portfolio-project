@@ -4,15 +4,17 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
+print("API KEY:", os.getenv("OPENROUTER_API_KEY"))
 client = OpenAI(
     api_key=os.getenv("OPENROUTER_API_KEY"),
     base_url="https://openrouter.ai/api/v1"
 )
 
-async def ask_ai(message: str):
+def ask_ai(message: str):
 
     completion = client.chat.completions.create(
-        model="mistralai/mistral-7b-instruct:free",
+        model="mistralai/ministral-14b-2512",
         messages=[
             {
                 "role": "system",

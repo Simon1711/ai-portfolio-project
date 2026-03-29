@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from api.chat_api import router as chat_router
 from fastapi.middleware.cors import CORSMiddleware
+from api.auth_api import router as auth_router
+from api import email_api
 
 
 app = FastAPI()
@@ -14,9 +16,12 @@ app.add_middleware(
 )
 
 
-
+app.include_router(email_api.router)
 app.include_router(chat_router)
 
 @app.get("/")
 def home():
     return {"message": "AI Portfolio backend running"}
+
+
+app.include_router(auth_router)

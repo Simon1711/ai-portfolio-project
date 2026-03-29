@@ -12,10 +12,17 @@
 </head>
 
 <body>
+   <header class="navbar">
+  <h2 class="logo">AI Portfolio</h2>
 
+  <div class="nav-actions">
+    <button id="open-email" class="nav-btn">Send Email</button>
+    <button id="logout-btn" class="nav-btn logout">Logout</button>
+  </div>
+</header>
   <div class="intro-box">
     <h1>My AI Portfolio</h1>
-
+    
     <p>
       Welcome! This is a basic page showcasing my journey into the world of Artificial Intelligence.
     </p>
@@ -41,9 +48,26 @@
       </div>
 
     </div>
+    
 
+<div id="email-modal" class="modal hidden">
+
+  <div class="modal-content">
+    <span id="close-modal">&times;</span>
+    
+    <h3>Send Email</h3>
+
+    <input type="email" id="email-to" placeholder="Recipient email">
+    <textarea id="email-message" placeholder="Your message"></textarea>
+
+    <button id="send-email-btn">Send</button>
+    <p id="email-result"></p>
+  </div>
+
+</div>
   </div>
 <script src="components/chat-widget.js"></script>
 <script src="app.js"></script>
+<script src="logout.js"></script>
 </body>
 </html>

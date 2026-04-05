@@ -33,3 +33,13 @@ function removeTyping() {
     if (typing) typing.remove();
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+    const chatBubble = document.getElementById('chat-bubble');
+    const chatWidget = document.getElementById('chat-widget');
+
+    if (chatBubble && chatWidget) {
+        chatBubble.addEventListener('click', () => {
+            chatWidget.classList.toggle('hidden');
+        });
+    }
+});

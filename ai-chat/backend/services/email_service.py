@@ -14,7 +14,7 @@ def send_email(sender, recipient, subject, body):
 
         msg = MIMEText(body)
         msg["Subject"] = subject
-        msg["From"] = EMAIL
+        msg["From"] = f"{sender} via AI Agent <{EMAIL}>"
         msg["To"] = recipient
 
         with smtplib.SMTP("smtp.gmail.com", 587) as server:
